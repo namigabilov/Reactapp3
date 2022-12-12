@@ -8,13 +8,7 @@ const CardList = (props) => {
     const [products , setProducts] = useState();
     useEffect(() => {
         const getProducts = async () =>{
-            if (props.category === null) {
-                const response = await axios.get('https://fakestoreapi.com/products')
-            }
-            else
-            {
-                const response = await axios.get(`https://fakestoreapi.com/products/catagory/${props.category}`)
-            }
+            const response = await axios.get('https://fakestoreapi.com/products')
             setProducts(response.data);
         }
         getProducts();
